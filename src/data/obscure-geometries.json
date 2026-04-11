@@ -1,0 +1,188 @@
+{
+  "id": "obscure-geometries",
+  "name": "Obscure Geometries",
+  "subtitle": "Unfamiliar forms for familiar challenges",
+  "heroImage": "images/decks/obscure-geometries-hero.png",
+  "cards": [
+    {
+      "number": 1,
+      "name": "Vesica Piscis",
+      "type": "question",
+      "description": "The almond shape formed where two circles overlap — the space that belongs to both and neither.",
+      "text": "Where do your intentions for today and the group's needs actually overlap, and what lives in that shared sliver?",
+      "image": "images/obscure-geometries/01-vesica-piscis.png",
+      "attribution": null
+    },
+    {
+      "number": 2,
+      "name": "Catenary",
+      "type": "reflection",
+      "description": "The curve a chain makes when it hangs freely between two points — strongest under its own weight.",
+      "text": "Notice what in the room is holding itself up by gravity alone. Let the shape of that tension be information, not a problem to solve.",
+      "image": "images/obscure-geometries/02-catenary.png",
+      "attribution": null
+    },
+    {
+      "number": 3,
+      "name": "Voronoi",
+      "type": "question",
+      "description": "A pattern of cells where every point inside a cell is closest to one seed — boundaries drawn by proximity alone.",
+      "text": "Whose presence are you closest to right now, and whose territory are you standing inside without meaning to?",
+      "image": "images/obscure-geometries/03-voronoi.png",
+      "attribution": null
+    },
+    {
+      "number": 4,
+      "name": "Torus",
+      "type": "quote",
+      "description": "A donut-shaped surface — the path of energy that returns to itself through its own centre.",
+      "text": "The wound is the place where the Light enters you.",
+      "image": "images/obscure-geometries/04-torus.png",
+      "attribution": "Rumi"
+    },
+    {
+      "number": 5,
+      "name": "Geodesic",
+      "type": "question",
+      "description": "The shortest path between two points along a curved surface — a straight line that knows the world is round.",
+      "text": "What is the most honest route between where the group is now and where it wants to be — even if it doesn't look like a straight line?",
+      "image": "images/obscure-geometries/05-geodesic.png",
+      "attribution": null
+    },
+    {
+      "number": 6,
+      "name": "Penrose Tiling",
+      "type": "reflection",
+      "description": "A non-repeating pattern that covers the plane without ever quite repeating itself — ordered but never regular.",
+      "text": "Consider what in your practice looks like a pattern but has never actually happened the same way twice.",
+      "image": "images/obscure-geometries/06-penrose-tiling.png",
+      "attribution": null
+    },
+    {
+      "number": 7,
+      "name": "Ogive",
+      "type": "question",
+      "description": "The pointed arch that carries weight by splitting it sideways — a threshold that holds by leaning.",
+      "text": "What are you leaning on today, and what is leaning back on you without you noticing?",
+      "image": "images/obscure-geometries/07-ogive.png",
+      "attribution": null
+    },
+    {
+      "number": 8,
+      "name": "Lemniscate",
+      "type": "quote",
+      "description": "The figure-eight of infinity — a loop that crosses itself at the middle and keeps going.",
+      "text": "What you seek is seeking you.",
+      "image": "images/obscure-geometries/08-lemniscate.png",
+      "attribution": "Rumi"
+    },
+    {
+      "number": 9,
+      "name": "Frustum",
+      "type": "question",
+      "description": "A cone or pyramid with its top cut off — a shape that points toward something it will never fully become.",
+      "text": "What in your life or work is pointing toward a summit you may never arrive at, and how does that change what you do with the base?",
+      "image": "images/obscure-geometries/09-frustum.png",
+      "attribution": null
+    },
+    {
+      "number": 10,
+      "name": "Klein Bottle",
+      "type": "reflection",
+      "description": "A surface with no inside and no outside — a container that passes through itself to become its own exterior.",
+      "text": "Sit with the parts of yourself you try to keep private and the parts you offer publicly. Notice where the seam has already dissolved.",
+      "image": "images/obscure-geometries/10-klein-bottle.png",
+      "attribution": null
+    },
+    {
+      "number": 11,
+      "name": "Reuleaux Triangle",
+      "type": "question",
+      "description": "A shape of constant width that isn't a circle — it rolls smoothly but never has a centre in the usual sense.",
+      "text": "Where are you rolling steadily without a centre to return to, and is that freedom, avoidance, or both?",
+      "image": "images/obscure-geometries/11-reuleaux-triangle.png",
+      "attribution": null
+    },
+    {
+      "number": 12,
+      "name": "Asymptote",
+      "type": "reflection",
+      "description": "A line a curve approaches forever but never touches — intimacy without arrival.",
+      "text": "Bring to mind a relationship or goal you are perpetually approaching. Ask what the approach itself is giving you.",
+      "image": "images/obscure-geometries/12-asymptote.png",
+      "attribution": null
+    },
+    {
+      "number": 13,
+      "name": "Sierpinski Triangle",
+      "type": "question",
+      "description": "A triangle made of smaller triangles made of smaller triangles — the same shape at every scale.",
+      "text": "What pattern keeps showing up in your life at every scale — in a breath, in a day, in a year?",
+      "image": "images/obscure-geometries/13-sierpinski-triangle.png",
+      "attribution": null
+    },
+    {
+      "number": 14,
+      "name": "Caustic",
+      "type": "quote",
+      "description": "The bright curve of light refracted through a curved surface — beauty made from what distorts.",
+      "text": "There is a crack in everything. That's how the light gets in.",
+      "image": "images/obscure-geometries/14-caustic.png",
+      "attribution": "Leonard Cohen, Anthem"
+    },
+    {
+      "number": 15,
+      "name": "Wabi-Sabi Crack",
+      "type": "reflection",
+      "description": "A fault line honoured rather than hidden — the Japanese aesthetic of imperfect, incomplete, transient things.",
+      "text": "Notice one thing in yourself today that you have been trying to fix. Let it be evidence of having been used.",
+      "image": "images/obscure-geometries/15-wabi-sabi-crack.png",
+      "attribution": null
+    },
+    {
+      "number": 16,
+      "name": "Möbius Strip",
+      "type": "question",
+      "description": "A loop with only one side — travel far enough and you meet yourself upside-down.",
+      "text": "Where are you and the person you're working with on the same side of a problem without realising it yet?",
+      "image": "images/obscure-geometries/16-mobius-strip.png",
+      "attribution": null
+    },
+    {
+      "number": 17,
+      "name": "Golden Spiral",
+      "type": "quote",
+      "description": "A spiral whose growth rate is the golden ratio — each turn wider, but in proportion to the last.",
+      "text": "And the day came when the risk to remain tight in a bud was more painful than the risk it took to blossom.",
+      "image": "images/obscure-geometries/17-golden-spiral.png",
+      "attribution": "Anaïs Nin"
+    },
+    {
+      "number": 18,
+      "name": "Tangent Point",
+      "type": "question",
+      "description": "The single point where a line just touches a curve without crossing it — contact without entry.",
+      "text": "Where in the group today might the right move be to touch lightly and not cross over?",
+      "image": "images/obscure-geometries/18-tangent-point.png",
+      "attribution": null
+    },
+    {
+      "number": 19,
+      "name": "Hyperbolic Plane",
+      "type": "reflection",
+      "description": "A surface that curves away from itself in every direction — there is always more room than you expected.",
+      "text": "Give yourself permission to take up more space than the room seems to offer. Notice what happens when you do.",
+      "image": "images/obscure-geometries/19-hyperbolic-plane.png",
+      "attribution": null
+    },
+    {
+      "number": 20,
+      "name": "Ensō",
+      "type": "quote",
+      "description": "A circle drawn in a single brushstroke — whole precisely because it is not closed.",
+      "text": "From the withered tree, a flower blooms.",
+      "image": "images/obscure-geometries/20-enso.png",
+      "attribution": "Zen proverb"
+    }
+  ]
+}

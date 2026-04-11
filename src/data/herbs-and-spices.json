@@ -1,0 +1,188 @@
+{
+  "id": "herbs-and-spices",
+  "name": "Herbs & Spices",
+  "subtitle": "Twenty ingredients of presence",
+  "heroImage": "images/decks/herbs-and-spices-hero.png",
+  "cards": [
+    {
+      "number": 1,
+      "name": "Saffron",
+      "type": "question",
+      "description": "Preciousness, intensity in small amounts, the power of restraint.",
+      "text": "What is the smallest thing you could offer today that might change the colour of everything?",
+      "image": "images/herbs-and-spices/01-saffron.png",
+      "attribution": null
+    },
+    {
+      "number": 2,
+      "name": "Chamomile",
+      "type": "question",
+      "description": "Calm, gentleness, steadiness that heals.",
+      "text": "Where might steadiness be more useful than brilliance in this room today?",
+      "image": "images/herbs-and-spices/02-chamomile.png",
+      "attribution": null
+    },
+    {
+      "number": 3,
+      "name": "Cardamom",
+      "type": "question",
+      "description": "Complexity hidden in a small vessel, warmth with surprise.",
+      "text": "What would it look like to bring your full complexity into the room — not just the parts people expect?",
+      "image": "images/herbs-and-spices/03-cardamom.png",
+      "attribution": null
+    },
+    {
+      "number": 4,
+      "name": "Cinnamon",
+      "type": "question",
+      "description": "Warmth, familiarity, comfort that draws people closer.",
+      "text": "What would happen if you led with warmth before anything else?",
+      "image": "images/herbs-and-spices/04-cinnamon.png",
+      "attribution": null
+    },
+    {
+      "number": 5,
+      "name": "Mint",
+      "type": "question",
+      "description": "Refreshment, clarity, the ability to cut through and wake things up.",
+      "text": "Where could a moment of sharp honesty open a door that politeness cannot?",
+      "image": "images/herbs-and-spices/05-mint.png",
+      "attribution": null
+    },
+    {
+      "number": 6,
+      "name": "Star Anise",
+      "type": "question",
+      "description": "Geometry in nature, beauty in structure, the unexpected shape of things.",
+      "text": "What pattern keeps showing up in your work that you haven't yet named out loud?",
+      "image": "images/herbs-and-spices/06-star-anise.png",
+      "attribution": null
+    },
+    {
+      "number": 7,
+      "name": "Turmeric",
+      "type": "question",
+      "description": "Staining power, leaving a mark, transformation that cannot be undone.",
+      "text": "What are you willing to be changed by today — even if it leaves a mark?",
+      "image": "images/herbs-and-spices/07-turmeric.png",
+      "attribution": null
+    },
+    {
+      "number": 8,
+      "name": "Lavender",
+      "type": "question",
+      "description": "Calm before the threshold, preparation, ritual.",
+      "text": "What ritual — even a tiny one — could help you arrive fully before you begin?",
+      "image": "images/herbs-and-spices/08-lavender.png",
+      "attribution": null
+    },
+    {
+      "number": 9,
+      "name": "Black Pepper",
+      "type": "question",
+      "description": "Activating energy, the spark that wakes things up, necessary friction.",
+      "text": "Where are you avoiding the friction that might actually be the thing that moves everyone forward?",
+      "image": "images/herbs-and-spices/09-black-pepper.png",
+      "attribution": null
+    },
+    {
+      "number": 10,
+      "name": "Bay Leaf",
+      "type": "question",
+      "description": "Slow release, patience, influence that builds over time.",
+      "text": "What have you been adding quietly to this work that no one has noticed yet — and does it need to be noticed?",
+      "image": "images/herbs-and-spices/10-bay-leaf.png",
+      "attribution": null
+    },
+    {
+      "number": 11,
+      "name": "Vanilla",
+      "type": "reflection",
+      "description": "Depth mistaken for simplicity, the richness of what seems ordinary.",
+      "text": "The things people call simple are almost never simple. There is an entire journey inside what looks familiar.",
+      "image": "images/herbs-and-spices/11-vanilla.png",
+      "attribution": null
+    },
+    {
+      "number": 12,
+      "name": "Sumac",
+      "type": "reflection",
+      "description": "Bright acidity, the gift of a shifted perspective, waking up flavour in others.",
+      "text": "You don't always need to be the main ingredient. Sometimes the most generous thing is to make everyone around you more vivid.",
+      "image": "images/herbs-and-spices/12-sumac.png",
+      "attribution": null
+    },
+    {
+      "number": 13,
+      "name": "Clove",
+      "type": "reflection",
+      "description": "Intensity, numbing and healing at once, medicine that stings before it helps.",
+      "text": "Not everything that helps feels good at first. Some care arrives sharp, and softens only after it has done its work.",
+      "image": "images/herbs-and-spices/13-cloves.png",
+      "attribution": null
+    },
+    {
+      "number": 14,
+      "name": "Basil",
+      "type": "reflection",
+      "description": "Freshness, abundance, generosity that grows back when shared.",
+      "text": "The more you give of this kind of attention, the more of it there seems to be. It replenishes itself.",
+      "image": "images/herbs-and-spices/14-basil.png",
+      "attribution": null
+    },
+    {
+      "number": 15,
+      "name": "Ginger",
+      "type": "reflection",
+      "description": "Underground strength, knotted growth, warmth that builds slowly.",
+      "text": "The most interesting roots are never straight. They grow around what is in the way, and become stronger for it.",
+      "image": "images/herbs-and-spices/15-ginger.png",
+      "attribution": null
+    },
+    {
+      "number": 16,
+      "name": "Rosemary",
+      "type": "quote",
+      "description": "Remembrance, fidelity, the thread between past and present.",
+      "text": "There's rosemary, that's for remembrance; pray, love, remember.",
+      "image": "images/herbs-and-spices/16-rosemary.png",
+      "attribution": "William Shakespeare, Hamlet"
+    },
+    {
+      "number": 17,
+      "name": "Sage",
+      "type": "quote",
+      "description": "Wisdom, purification, clearing what no longer serves.",
+      "text": "The only true wisdom is in knowing you know nothing.",
+      "image": "images/herbs-and-spices/17-sage.png",
+      "attribution": "Socrates, via Plato"
+    },
+    {
+      "number": 18,
+      "name": "Thyme",
+      "type": "quote",
+      "description": "The weight of small moments, time's quiet accumulation.",
+      "text": "To see a world in a grain of sand, and a heaven in a wild flower.",
+      "image": "images/herbs-and-spices/18-thyme.png",
+      "attribution": "William Blake, Auguries of Innocence"
+    },
+    {
+      "number": 19,
+      "name": "Fennel",
+      "type": "quote",
+      "description": "Licorice duality, sweetness and sharpness coexisting, paradox.",
+      "text": "Do I contradict myself? Very well then I contradict myself. I am large, I contain multitudes.",
+      "image": "images/herbs-and-spices/19-fennel.png",
+      "attribution": "Walt Whitman, Song of Myself"
+    },
+    {
+      "number": 20,
+      "name": "Nutmeg",
+      "type": "quote",
+      "description": "Hidden interior, the reward of cracking something open, warmth at the centre.",
+      "text": "The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.",
+      "image": "images/herbs-and-spices/20-nutmeg.png",
+      "attribution": "Marcel Proust"
+    }
+  ]
+}

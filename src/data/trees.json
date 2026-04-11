@@ -1,0 +1,188 @@
+{
+  "id": "trees",
+  "name": "Trees",
+  "subtitle": "Rooted forms for grounded practice",
+  "heroImage": "images/decks/trees-hero.png",
+  "cards": [
+    {
+      "number": 1,
+      "name": "Willow",
+      "type": "question",
+      "description": "Flexibility, bending without breaking, grace under pressure.",
+      "text": "What would it look like to bend toward this group instead of bracing against what comes?",
+      "image": "images/trees/01-willow.png",
+      "attribution": null
+    },
+    {
+      "number": 2,
+      "name": "Birch",
+      "type": "question",
+      "description": "Transparency, letting light through, visible vulnerability.",
+      "text": "Where might letting people see what you're actually feeling make the room safer for everyone?",
+      "image": "images/trees/02-birch.png",
+      "attribution": null
+    },
+    {
+      "number": 3,
+      "name": "Banyan",
+      "type": "question",
+      "description": "Interconnection, support structures that become new roots, collective holding.",
+      "text": "What would it look like to let the group's wisdom become the structure — not just yours?",
+      "image": "images/trees/03-banyan.png",
+      "attribution": null
+    },
+    {
+      "number": 4,
+      "name": "Cedar",
+      "type": "question",
+      "description": "Protection, shelter, creating a safe enclosure.",
+      "text": "What would it feel like to hold the space today without needing to control what happens inside it?",
+      "image": "images/trees/04-cedar.png",
+      "attribution": null
+    },
+    {
+      "number": 5,
+      "name": "Aspen",
+      "type": "question",
+      "description": "Shared root systems, trembling sensitivity, what moves together beneath the surface.",
+      "text": "What is the group already feeling that nobody has said out loud yet?",
+      "image": "images/trees/05-aspen.png",
+      "attribution": null
+    },
+    {
+      "number": 6,
+      "name": "Baobab",
+      "type": "question",
+      "description": "Storing what is needed for hard seasons, endurance, ancient knowing.",
+      "text": "What have you learned from the hard times that is finally ready to be useful here?",
+      "image": "images/trees/06-baobab.png",
+      "attribution": null
+    },
+    {
+      "number": 7,
+      "name": "Japanese Maple",
+      "type": "question",
+      "description": "Transformation, beauty in change, letting go as a form of art.",
+      "text": "What are you ready to release today that might be more beautiful in the letting go?",
+      "image": "images/trees/07-japanese-maple.png",
+      "attribution": null
+    },
+    {
+      "number": 8,
+      "name": "Olive Tree",
+      "type": "question",
+      "description": "Peace, endurance through drought, gnarled persistence.",
+      "text": "What if the most powerful thing you do today is simply refuse to rush?",
+      "image": "images/trees/08-olive-tree.png",
+      "attribution": null
+    },
+    {
+      "number": 9,
+      "name": "Hawthorn",
+      "type": "question",
+      "description": "Threshold guardianship, boundary between worlds, protection with thorns.",
+      "text": "What boundary do you need to name before you walk into the room — so you can be generous once you're inside?",
+      "image": "images/trees/09-hawthorn.png",
+      "attribution": null
+    },
+    {
+      "number": 10,
+      "name": "Fig Tree",
+      "type": "question",
+      "description": "Abundance, offering shade and sustenance, the invitation to gather.",
+      "text": "How might you create the conditions for something to emerge — without deciding in advance what it should be?",
+      "image": "images/trees/10-fig-tree.png",
+      "attribution": null
+    },
+    {
+      "number": 11,
+      "name": "Redwood",
+      "type": "reflection",
+      "description": "Immensity supported by shallow roots, needing neighbours to stand.",
+      "text": "Even the tallest things in the world cannot stand alone. Their strength is in how close they grow to each other.",
+      "image": "images/trees/11-redwood.png",
+      "attribution": null
+    },
+    {
+      "number": 12,
+      "name": "Magnolia",
+      "type": "reflection",
+      "description": "Blooming before the leaves arrive, courage to show up unprotected.",
+      "text": "Sometimes you have to open before you feel ready. The leaves will come — but the bloom has to go first.",
+      "image": "images/trees/12-magnolia.png",
+      "attribution": null
+    },
+    {
+      "number": 13,
+      "name": "Mangrove",
+      "type": "reflection",
+      "description": "Thriving in between — not land, not sea. Building ground where there was none.",
+      "text": "The most interesting work happens in the in-between places. Not solid ground, not open water — the muddy, tangled edges where something new is taking root.",
+      "image": "images/trees/13-mangrove.png",
+      "attribution": null
+    },
+    {
+      "number": 14,
+      "name": "Cherry Blossom",
+      "type": "reflection",
+      "description": "Brevity, beauty that does not need to last to matter.",
+      "text": "Not everything valuable endures. Some of the most important moments in a room last only seconds — and that is enough.",
+      "image": "images/trees/14-cherry-blossom.png",
+      "attribution": null
+    },
+    {
+      "number": 15,
+      "name": "Cork Oak",
+      "type": "reflection",
+      "description": "Regeneration, giving of yourself without being destroyed, sustainable generosity.",
+      "text": "There is a kind of giving that does not diminish you. The bark grows back. You are not less for having offered it.",
+      "image": "images/trees/15-cork-oak.png",
+      "attribution": null
+    },
+    {
+      "number": 16,
+      "name": "Oak",
+      "type": "quote",
+      "description": "Strength, deep roots, steady presence across generations.",
+      "text": "A society grows great when old men plant trees in whose shade they shall never sit.",
+      "image": "images/trees/16-oak.png",
+      "attribution": "Greek proverb"
+    },
+    {
+      "number": 17,
+      "name": "Pine",
+      "type": "quote",
+      "description": "Clarity, evergreen constancy, the scent that sharpens attention.",
+      "text": "In the middle of the journey of our life, I found myself in a dark wood, for the straight way was lost.",
+      "image": "images/trees/17-pine.png",
+      "attribution": "Dante Alighieri, Inferno"
+    },
+    {
+      "number": 18,
+      "name": "Wisteria",
+      "type": "quote",
+      "description": "Patient beauty, the reward of years of tending, cascading abundance.",
+      "text": "The creation of a thousand forests is in one acorn.",
+      "image": "images/trees/18-wisteria.png",
+      "attribution": "Ralph Waldo Emerson"
+    },
+    {
+      "number": 19,
+      "name": "Cypress",
+      "type": "quote",
+      "description": "Solitude that is not loneliness, standing sentinel, quiet witness.",
+      "text": "I said to my soul, be still, and wait without hope, for hope would be hope for the wrong thing.",
+      "image": "images/trees/19-cypress.png",
+      "attribution": "T.S. Eliot, East Coker"
+    },
+    {
+      "number": 20,
+      "name": "Bodhi Tree",
+      "type": "quote",
+      "description": "Awakening, the place where understanding arrives, sitting with not-knowing until it transforms.",
+      "text": "The only way to make sense out of change is to plunge into it, move with it, and join the dance.",
+      "image": "images/trees/20-bodhi-tree.png",
+      "attribution": "Alan Watts"
+    }
+  ]
+}

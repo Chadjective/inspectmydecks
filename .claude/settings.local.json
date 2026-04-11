@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Read(//c/Users/LIAMJ/**)",
+      "Bash(cp \"Gemini_Generated_Image_ \\(7\\).png\" \"01-vesica-piscis.png\")",
+      "Bash(cp \"catenary.png\" \"02-catenary.png\")",
+      "Bash(cp \"Gemini_Generated_Image_ \\(8\\).png\" \"03-voronoi.png\")",
+      "Bash(cp \"Gemini_Generated_Image_ \\(9\\).png\" \"04-torus.png\")",
+      "Bash(cp \"geodesic.png\" \"05-geodesic.png\")",
+      "Bash(gh auth:*)",
+      "Bash(git config:*)",
+      "Bash(mkdir -p \"C:/Users/LIAMJ/Desktop/Cards/public/images/herbs-and-spices\")",
+      "Bash(cp \"Gemini_Generated_Image_ \\(4\\).png\" \"C:/Users/LIAMJ/Desktop/Cards/public/images/herbs-and-spices/01-star-anise.png\")",
+      "Bash(cp \"Gemini_Generated_Image_ \\(5\\).png\" \"C:/Users/LIAMJ/Desktop/Cards/public/images/herbs-and-spices/02-turmeric.png\")",
+      "Bash(cp \"Gemini_Generated_Image_ \\(6\\).png\" \"C:/Users/LIAMJ/Desktop/Cards/public/images/herbs-and-spices/03-lavender.png\")",
+      "Bash(cp \"Gemini_Generated_Image_ \\(7\\).png\" \"C:/Users/LIAMJ/Desktop/Cards/public/images/herbs-and-spices/04-black-pepper.png\")",
+      "Bash(mv \"07-saffron.png\" \"01-saffron.png\")",
+      "Bash(mv \"08-chamomile.png\" \"02-chamomile.png\")",
+      "Bash(mv \"09-cardamom.png\" \"03-cardamom.png\")",
+      "Bash(mv \"10-cinnamon.png\" \"04-cinnamon.png\")",
+      "Bash(mv \"11-mint.png\" \"05-mint.png\")",
+      "Bash(sort -t'\\(' -k2 -n)",
+      "Bash(export PATH=\"/c/Program Files/GitHub CLI:$PATH\")",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" --version)",
+      "Bash(\"/c/Users/LIAMJ/AppData/Local/Programs/GitHub CLI/gh.exe\" --version)",
+      "Bash(\"/c/Users/LIAMJ/AppData/Local/Microsoft/WinGet/Packages/GitHub.cli_Microsoft.Winget.Source_8wekyb3d8bbwe/gh.exe\" --version)"
+    ]
+  }
+}

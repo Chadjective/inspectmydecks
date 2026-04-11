@@ -1,0 +1,188 @@
+{
+  "id": "fruits",
+  "name": "Fruits",
+  "subtitle": "Ripening, seeding, falling",
+  "heroImage": "images/decks/fruits-hero.png",
+  "cards": [
+    {
+      "number": 1,
+      "name": "Pomegranate",
+      "type": "question",
+      "description": "A fruit that hides hundreds of seeds behind tough leather — abundance wrapped in effort.",
+      "text": "What in you today is ready to be opened, but only by someone willing to stain their hands?",
+      "image": "images/fruits/01-pomegranate.png",
+      "attribution": null
+    },
+    {
+      "number": 2,
+      "name": "Peach",
+      "type": "reflection",
+      "description": "Fuzzed skin, soft flesh, hard stone — a body that insists on softness and still keeps a pit.",
+      "text": "Consider the places you have been tender today. Notice where the stone still is beneath them.",
+      "image": "images/fruits/02-peach.png",
+      "attribution": null
+    },
+    {
+      "number": 3,
+      "name": "Grape",
+      "type": "quote",
+      "description": "A fruit that lives most of its life in clusters and only becomes itself alone.",
+      "text": "Not all those who wander are lost.",
+      "image": "images/fruits/03-grape.png",
+      "attribution": "J.R.R. Tolkien"
+    },
+    {
+      "number": 4,
+      "name": "Mango",
+      "type": "question",
+      "description": "A fruit you cannot eat politely — the sweetness demands your whole face.",
+      "text": "Where in your work have you been trying to stay tidy, and what would it cost you to give in?",
+      "image": "images/fruits/04-mango.png",
+      "attribution": null
+    },
+    {
+      "number": 5,
+      "name": "Watermelon",
+      "type": "reflection",
+      "description": "Mostly water, loud with sugar, green on the outside and impossibly pink within.",
+      "text": "Sit with how much of you is water. Let that be the reason you bend instead of break.",
+      "image": "images/fruits/05-watermelon.png",
+      "attribution": null
+    },
+    {
+      "number": 6,
+      "name": "Coconut",
+      "type": "question",
+      "description": "A fruit with three faces — armour, milk, and meat — each one asking a different kind of labour.",
+      "text": "What part of you today needs armour, what part needs feeding, and who gets to ask which?",
+      "image": "images/fruits/06-coconut.png",
+      "attribution": null
+    },
+    {
+      "number": 7,
+      "name": "Persimmon",
+      "type": "quote",
+      "description": "A fruit that is astringent until it is ripe, then astonishing — patience as a flavour.",
+      "text": "Between stimulus and response there is a space. In that space is our power to choose our response.",
+      "image": "images/fruits/07-persimmon.png",
+      "attribution": "Viktor Frankl"
+    },
+    {
+      "number": 8,
+      "name": "Pear",
+      "type": "question",
+      "description": "A fruit shaped like a drop that hasn't fallen — poised, weighted, almost going.",
+      "text": "What in you is nearly ready to fall, and what would it mean to stop catching it?",
+      "image": "images/fruits/08-pear.png",
+      "attribution": null
+    },
+    {
+      "number": 9,
+      "name": "Blackberry",
+      "type": "reflection",
+      "description": "A fruit that grows from thorns and stains whoever it touches — sweetness through defence.",
+      "text": "Think of a person whose care has pricked you. Hold that the thorn and the fruit may not be separable.",
+      "image": "images/fruits/09-blackberry.png",
+      "attribution": null
+    },
+    {
+      "number": 10,
+      "name": "Olive",
+      "type": "question",
+      "description": "A fruit bitter raw — it becomes itself only through time, salt, and pressure.",
+      "text": "What in your practice is still bitter because it hasn't yet been cured, and who is rushing it?",
+      "image": "images/fruits/10-olive.png",
+      "attribution": null
+    },
+    {
+      "number": 11,
+      "name": "Apricot",
+      "type": "quote",
+      "description": "A small golden fruit with a bitter almond hidden at the centre — sweetness with a secret.",
+      "text": "Tell me, what is it you plan to do with your one wild and precious life?",
+      "image": "images/fruits/11-apricot.png",
+      "attribution": "Mary Oliver, The Summer Day"
+    },
+    {
+      "number": 12,
+      "name": "Passion Fruit",
+      "type": "question",
+      "description": "A wrinkled shell around a loud, wet interior — a fruit that looks spent and still isn't.",
+      "text": "Where are you judging your aliveness by what your surface looks like today?",
+      "image": "images/fruits/12-passion-fruit.png",
+      "attribution": null
+    },
+    {
+      "number": 13,
+      "name": "Quince",
+      "type": "reflection",
+      "description": "Inedible until cooked — a fruit that insists on being accompanied by fire.",
+      "text": "Notice what in your life refuses to become nourishing until someone has stayed with it through heat.",
+      "image": "images/fruits/13-quince.png",
+      "attribution": null
+    },
+    {
+      "number": 14,
+      "name": "Strawberry",
+      "type": "question",
+      "description": "A fruit whose seeds ride on the outside — the vulnerable bits on display.",
+      "text": "What are you carrying today where the seeds are showing, and who is it safe to let see them?",
+      "image": "images/fruits/14-strawberry.png",
+      "attribution": null
+    },
+    {
+      "number": 15,
+      "name": "Orange",
+      "type": "reflection",
+      "description": "Sectioned into neat chambers under its skin — a fruit that is already divided, waiting.",
+      "text": "Consider how much of you is already portioned into the roles others hold of you. Which chamber gets the first bite?",
+      "image": "images/fruits/15-orange.png",
+      "attribution": null
+    },
+    {
+      "number": 16,
+      "name": "Fig",
+      "type": "quote",
+      "description": "A fruit that blooms inside itself — flower and fruit as the same private room.",
+      "text": "There is another world, but it is in this one.",
+      "image": "images/fruits/16-fig.png",
+      "attribution": "Paul Éluard"
+    },
+    {
+      "number": 17,
+      "name": "Lemon",
+      "type": "question",
+      "description": "A fruit you almost never eat alone — it is meant to change whatever it joins.",
+      "text": "Where is your role in the room today to become part of something else rather than stand on your own?",
+      "image": "images/fruits/17-lemon.png",
+      "attribution": null
+    },
+    {
+      "number": 18,
+      "name": "Cherry",
+      "type": "reflection",
+      "description": "Small, brief, and doubled on its stem — a fruit that arrives with a companion and leaves fast.",
+      "text": "Name one brief thing you loved this week. Let the brevity be part of why it counted.",
+      "image": "images/fruits/18-cherry.png",
+      "attribution": null
+    },
+    {
+      "number": 19,
+      "name": "Plum",
+      "type": "quote",
+      "description": "A fruit whose skin holds a bruise the flesh doesn't share — visible history, private interior.",
+      "text": "I have eaten the plums that were in the icebox. Forgive me. They were delicious, so sweet and so cold.",
+      "image": "images/fruits/19-plum.png",
+      "attribution": "William Carlos Williams, This Is Just To Say"
+    },
+    {
+      "number": 20,
+      "name": "Apple",
+      "type": "question",
+      "description": "The most familiar fruit in the room, the one whose meaning everyone already thinks they know.",
+      "text": "What in your work has become so familiar that you have stopped actually tasting it?",
+      "image": "images/fruits/20-apple.png",
+      "attribution": null
+    }
+  ]
+}
