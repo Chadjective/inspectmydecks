@@ -2,10 +2,17 @@ import { useState } from 'react'
 import { assetUrl } from '../utils/assetUrl.js'
 
 export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
-  const [imgFailed, setImgFailed] = useState(false)
-
-  // Reset image error state when card changes
   const imgSrc = assetUrl(card.image)
+  const [imgFailed, setImgFailed] = useState(false)
+  const [shownSrc, setShownSrc] = useState(imgSrc)
+
+  // Reset the image-error state when the card (and thus its image) changes —
+  // otherwise one card with a missing image would force the fallback for every
+  // card viewed after it. (React's recommended reset-on-prop-change pattern.)
+  if (imgSrc !== shownSrc) {
+    setShownSrc(imgSrc)
+    setImgFailed(false)
+  }
 
   return (
     <div
