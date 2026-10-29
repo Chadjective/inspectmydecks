@@ -1,4 +1,4 @@
-export default function Navigation({ onBack, current, total, deckName }) {
+export default function Navigation({ onBack, current, total, title }) {
   return (
     <nav className="nav" aria-label="Card navigation">
       <button
@@ -10,7 +10,7 @@ export default function Navigation({ onBack, current, total, deckName }) {
         <span aria-hidden="true">◁</span>
         <span>Decks</span>
       </button>
-      <span style={{ color: 'var(--ink-dim)' }}>{deckName}</span>
+      <h1 className="nav__title" aria-live="polite">{title}</h1>
       <span className="nav__counter">
         {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
       </span>

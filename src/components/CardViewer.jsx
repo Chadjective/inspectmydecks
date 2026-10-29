@@ -62,6 +62,10 @@ export default function CardViewer({ deck, onBack }) {
     [index, order.length],
   )
 
+  const flip = useCallback(() => {
+    if (!animatingRef.current) setFlipped((f) => !f)
+  }, [])
+
   const next = useCallback(() => go(1), [go])
   const prev = useCallback(() => go(-1), [go])
 
@@ -150,7 +154,7 @@ export default function CardViewer({ deck, onBack }) {
         onBack={onBack}
         current={index + 1}
         total={order.length}
-        deckName={deck.name}
+        title={currentCard.name}
       />
 
       <div className="viewer__stage" {...swipeHandlers}>
@@ -176,9 +180,7 @@ export default function CardViewer({ deck, onBack }) {
         <FlipCard
           card={currentCard}
           flipped={flipped}
-          onFlip={() => {
-            if (!animatingRef.current) setFlipped((f) => !f)
-          }}
+          onFlip={flip}
           transitionClass={transitionClass}
         />
 
@@ -187,6 +189,15 @@ export default function CardViewer({ deck, onBack }) {
         <div className="viewer__edge-hint viewer__edge-hint--left" aria-hidden="true">‹</div>
         <div className="viewer__edge-hint viewer__edge-hint--right" aria-hidden="true">›</div>
       </div>
+
+      <button
+        type="button"
+        className="tool-btn tool-btn--primary"
+        onClick={flip}
+        aria-pressed={flipped}
+      >
+        ↻ Flip card
+      </button>
 
       <div className="viewer__tools">
         <button type="button" className="tool-btn" onClick={pickRandom}>
