@@ -2,7 +2,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import FlipCard from './FlipCard.jsx'
 import Navigation from './Navigation.jsx'
 import ShuffleAnimation from './ShuffleAnimation.jsx'
+import InfoPanel, { UNSUPPORTED } from './InfoPanel.jsx'
 import { useSwipe } from '../hooks/useSwipe.js'
+import { useShake, requestMotionPermission } from '../hooks/useShake.js'
 
 // Fisher–Yates
 function shuffle(array) {
@@ -18,6 +20,34 @@ const SLIDE_MS = 340
 const RIFFLE_MS = 420
 const SHUFFLE_MS = 820
 
+const SHAKE_KEY = 'semillero:shake'
+
+// Shake needs a motion sensor; desktops report the API but have no sensor.
+const shakeSupported =
+  typeof window !== 'undefined' &&
+  typeof window.DeviceMotionEvent !== 'undefined' &&
+  !!window.matchMedia?.('(pointer: coarse)').matches
+
+// iOS (and some browsers) must ask permission from a tap before sending motion events.
+const shakeNeedsPermission =
+  shakeSupported && typeof window.DeviceMotionEvent.requestPermission === 'function'
+
+function readShakePref() {
+  try {
+    return localStorage.getItem(SHAKE_KEY)
+  } catch {
+    return null
+  }
+}
+
+function saveShakePref(on) {
+  try {
+    localStorage.setItem(SHAKE_KEY, on ? 'on' : 'off')
+  } catch {
+    /* ignore */
+  }
+}
+
 export default function CardViewer({ deck, onBack }) {
   // The order is a permutation of card indices — reshuffling creates a new one.
   const [order, setOrder] = useState(() => deck.cards.map((_, i) => i))
@@ -25,6 +55,13 @@ export default function CardViewer({ deck, onBack }) {
   const [flipped, setFlipped] = useState(false)
   const [transition, setTransition] = useState(null) // 'leaving-left' | 'leaving-right' | 'entering-left' | 'entering-right' | 'bouncing-left' | 'bouncing-right'
   const [shuffleFx, setShuffleFx] = useState(null)    // 'riffle' | 'shuffle' | null
+  const [infoOpen, setInfoOpen] = useState(false)
+  // On by default where no permission prompt is needed (e.g. Android);
+  // permission-gated devices (iPhone) start off until switched on from the info panel.
+  const [shakeOn, setShakeOn] = useState(
+    () => shakeSupported && !shakeNeedsPermission && readShakePref() !== 'off',
+  )
+  const [shakeDenied, setShakeDenied] = useState(false)
 
   const animatingRef = useRef(false)
 
@@ -99,9 +136,44 @@ export default function CardViewer({ deck, onBack }) {
     }, SHUFFLE_MS)
   }, [deck.cards])
 
+  // --- Shake ---
+  useShake({
+    onShortShake: pickRandom,
+    onLongShake: reshuffle,
+    enabled: shakeOn && !infoOpen,
+  })
+
+  const toggleShake = async () => {
+    if (shakeOn) {
+      setShakeOn(false)
+      saveShakePref(false)
+      return
+    }
+    if (shakeNeedsPermission) {
+      const result = await requestMotionPermission()
+      if (result !== 'granted') {
+        setShakeDenied(true)
+        return
+      }
+    }
+    setShakeDenied(false)
+    setShakeOn(true)
+    saveShakePref(true)
+  }
+
+  const shakeStatus = !shakeSupported
+    ? UNSUPPORTED
+    : shakeDenied
+      ? 'Motion access was blocked. Allow it in your browser settings to use shake.'
+      : null
+
   // --- Keyboard ---
   useEffect(() => {
     const onKey = (e) => {
+      if (infoOpen) {
+        if (e.key === 'Escape') setInfoOpen(false)
+        return
+      }
       if (e.key === 'ArrowLeft') prev()
       else if (e.key === 'ArrowRight') next()
       else if (e.key === ' ' || e.key === 'Enter') {
@@ -113,7 +185,7 @@ export default function CardViewer({ deck, onBack }) {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [next, prev, pickRandom, reshuffle, onBack])
+  }, [next, prev, pickRandom, reshuffle, onBack, infoOpen])
 
   const swipeHandlers = useSwipe({
     onSwipeLeft: next,
@@ -129,6 +201,7 @@ export default function CardViewer({ deck, onBack }) {
     <main className="viewer">
       <Navigation
         onBack={onBack}
+        onInfo={() => setInfoOpen(true)}
         current={index + 1}
         total={order.length}
       />
@@ -188,6 +261,15 @@ export default function CardViewer({ deck, onBack }) {
           ◇ Reshuffle
         </button>
       </div>
+
+      {infoOpen && (
+        <InfoPanel
+          onClose={() => setInfoOpen(false)}
+          shakeOn={shakeOn}
+          shakeStatus={shakeStatus}
+          onToggleShake={toggleShake}
+        />
+      )}
     </main>
   )
 }
