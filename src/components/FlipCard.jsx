@@ -30,14 +30,26 @@ export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
       {/* IMAGE SIDE */}
       <div className="flip-card__face flip-card__face--front">
         {!imgFailed && imgSrc ? (
-          <img
-            key={imgSrc}
-            className="flip-card__image"
-            src={imgSrc}
-            alt={card.name}
-            onError={() => setImgFailed(true)}
-            draggable={false}
-          />
+          <>
+            {/* Blurred copy fills the card behind the full, uncropped image,
+                since card art comes in many shapes (tall, square-ish, landscape). */}
+            <img
+              key={`${imgSrc}-backdrop`}
+              className="flip-card__image-backdrop"
+              src={imgSrc}
+              alt=""
+              aria-hidden="true"
+              draggable={false}
+            />
+            <img
+              key={imgSrc}
+              className="flip-card__image"
+              src={imgSrc}
+              alt={card.name}
+              onError={() => setImgFailed(true)}
+              draggable={false}
+            />
+          </>
         ) : (
           <div className="flip-card__image-fallback">
             <span>{card.name}</span>
