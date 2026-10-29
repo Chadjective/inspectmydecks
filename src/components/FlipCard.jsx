@@ -70,7 +70,6 @@ function CardTextSide({ card }) {
   return (
     <div className="card-text">
       <div className="card-text__type">{card.type}</div>
-      <h3 className="card-text__name">{card.name}</h3>
       <p className="card-text__description">{card.description}</p>
 
       <div className="deco-rule" aria-hidden="true">

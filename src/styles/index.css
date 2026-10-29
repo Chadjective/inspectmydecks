@@ -237,11 +237,42 @@ img {
 
 .viewer__stage {
   position: relative;
-  /* also capped by screen height so the buttons below always fit */
-  width: min(92vw, 440px, (100dvh - 280px) * 0.75);
+  /* also capped by screen height so the title and buttons always fit */
+  width: min(92vw, 440px, (100dvh - 330px) * 0.75);
   aspect-ratio: 3 / 4;
   perspective: 1600px;
   margin: auto 0;
+}
+
+/* Card name: spans the card's width, framed by gold rules */
+.viewer__title {
+  width: min(92vw, 440px, (100dvh - 330px) * 0.75);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(22px, 6.4vw, 30px);
+  line-height: 1.1;
+  text-align: center;
+  color: var(--ink);
+}
+
+.viewer__title::before,
+.viewer__title::after {
+  content: '';
+  flex: 1;
+  min-width: 18px;
+  height: 1px;
+}
+
+.viewer__title::before {
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.viewer__title::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
 }
 
 .viewer__edge-hint {
@@ -410,15 +441,6 @@ img {
   text-align: center;
 }
 
-.card-text__name {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 6vw, 38px);
-  line-height: 1;
-  text-align: center;
-  margin: 0;
-  color: var(--ink);
-}
-
 .card-text__description {
   font-style: italic;
   font-size: 14px;
@@ -454,11 +476,9 @@ img {
 .nav {
   width: 100%;
   max-width: 440px;
-  /* side columns keep their size; the title stays centred and wraps if long */
-  display: grid;
-  grid-template-columns: minmax(max-content, 1fr) minmax(0, auto) minmax(max-content, 1fr);
+  display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
   padding: 4px 6px;
   color: var(--ink-dim);
   font-family: var(--font-sc);
@@ -482,18 +502,7 @@ img {
   background: rgba(201, 162, 74, 0.08);
 }
 
-.nav__title {
-  margin: 0;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  text-align: center;
-  line-height: 1.3;
-}
-
 .nav__counter {
-  justify-self: end;
   color: var(--gold);
   font-variant-numeric: tabular-nums;
 }

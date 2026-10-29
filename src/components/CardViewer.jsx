@@ -3,7 +3,6 @@ import FlipCard from './FlipCard.jsx'
 import Navigation from './Navigation.jsx'
 import ShuffleAnimation from './ShuffleAnimation.jsx'
 import { useSwipe } from '../hooks/useSwipe.js'
-import { useShake, requestMotionPermission } from '../hooks/useShake.js'
 
 // Fisher–Yates
 function shuffle(array) {
@@ -26,7 +25,6 @@ export default function CardViewer({ deck, onBack }) {
   const [flipped, setFlipped] = useState(false)
   const [transition, setTransition] = useState(null) // 'leaving-left' | 'leaving-right' | 'entering-left' | 'entering-right' | 'bouncing-left' | 'bouncing-right'
   const [shuffleFx, setShuffleFx] = useState(null)    // 'riffle' | 'shuffle' | null
-  const [motionEnabled, setMotionEnabled] = useState(false)
 
   const animatingRef = useRef(false)
 
@@ -117,13 +115,6 @@ export default function CardViewer({ deck, onBack }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [next, prev, pickRandom, reshuffle, onBack])
 
-  // --- Shake ---
-  useShake({
-    onShortShake: pickRandom,
-    onLongShake: reshuffle,
-    enabled: motionEnabled,
-  })
-
   const swipeHandlers = useSwipe({
     onSwipeLeft: next,
     onSwipeRight: prev,
@@ -134,28 +125,18 @@ export default function CardViewer({ deck, onBack }) {
     return `is-${transition}`
   }, [transition])
 
-  const handleEnableMotion = async () => {
-    const result = await requestMotionPermission()
-    if (result === 'granted' || result === 'unsupported') {
-      setMotionEnabled(result === 'granted')
-    }
-  }
-
-  // Show a "tap to enable shake" button only on devices that plausibly support it
-  const showMotionButton =
-    typeof window !== 'undefined' &&
-    typeof window.DeviceMotionEvent !== 'undefined' &&
-    !motionEnabled &&
-    typeof DeviceMotionEvent.requestPermission === 'function'
-
   return (
     <main className="viewer">
       <Navigation
         onBack={onBack}
         current={index + 1}
         total={order.length}
-        title={currentCard.name}
       />
+
+      {/* Card name sits above the card so it reads the same on both sides */}
+      <h1 className="viewer__title" aria-live="polite">
+        {currentCard.name}
+      </h1>
 
       <div className="viewer__stage" {...swipeHandlers}>
         <button
@@ -196,7 +177,7 @@ export default function CardViewer({ deck, onBack }) {
         onClick={flip}
         aria-pressed={flipped}
       >
-        ↻ Flip card
+        ↻ Flip
       </button>
 
       <div className="viewer__tools">
@@ -206,11 +187,6 @@ export default function CardViewer({ deck, onBack }) {
         <button type="button" className="tool-btn" onClick={reshuffle}>
           ◇ Reshuffle
         </button>
-        {showMotionButton && (
-          <button type="button" className="tool-btn" onClick={handleEnableMotion}>
-            ◈ Enable shake
-          </button>
-        )}
       </div>
     </main>
   )
