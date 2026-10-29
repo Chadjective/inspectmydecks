@@ -237,10 +237,42 @@ img {
 
 .viewer__stage {
   position: relative;
-  width: min(92vw, 440px);
+  /* also capped by screen height so the title and buttons always fit */
+  width: min(92vw, 440px, (100dvh - 330px) * 0.75);
   aspect-ratio: 3 / 4;
   perspective: 1600px;
   margin: auto 0;
+}
+
+/* Card name: spans the card's width, framed by gold rules */
+.viewer__title {
+  width: min(92vw, 440px, (100dvh - 330px) * 0.75);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(22px, 6.4vw, 30px);
+  line-height: 1.1;
+  text-align: center;
+  color: var(--ink);
+}
+
+.viewer__title::before,
+.viewer__title::after {
+  content: '';
+  flex: 1;
+  min-width: 18px;
+  height: 1px;
+}
+
+.viewer__title::before {
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.viewer__title::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
 }
 
 .viewer__edge-hint {
@@ -325,12 +357,23 @@ img {
     var(--bg-1);
 }
 
+/* Show the whole artwork (never crop); the blurred backdrop fills any gap. */
 .flip-card__image {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: contain;
+}
+
+.flip-card__image-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transform: scale(1.15);
+  filter: blur(18px) brightness(0.45) saturate(1.1);
 }
 
 .flip-card__image-fallback {
@@ -380,20 +423,6 @@ img {
   border-top: 0;
 }
 
-.flip-card__image-label {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
-  text-align: center;
-  font-family: var(--font-sc);
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--ink);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-}
-
 /* Back of card (text side) */
 .card-text {
   display: flex;
@@ -410,15 +439,6 @@ img {
   text-transform: uppercase;
   color: var(--gold);
   text-align: center;
-}
-
-.card-text__name {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 6vw, 38px);
-  line-height: 1;
-  text-align: center;
-  margin: 0;
-  color: var(--ink);
 }
 
 .card-text__description {
@@ -489,7 +509,8 @@ img {
 
 .viewer__tools {
   display: flex;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px 14px;
   justify-content: center;
   padding-top: 4px;
 }
@@ -506,6 +527,7 @@ img {
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+  white-space: nowrap;
   transition: color 200ms var(--ease), border-color 200ms var(--ease), background 200ms var(--ease);
 }
 
@@ -515,6 +537,232 @@ img {
   border-color: var(--gold);
   background: rgba(201, 162, 74, 0.06);
   outline: none;
+}
+
+/* Main action: more prominent so people discover the card's other side */
+.tool-btn--primary {
+  padding: 12px 26px;
+  font-size: 12px;
+  color: var(--gold-hi);
+  border-color: var(--gold);
+  background: rgba(201, 162, 74, 0.1);
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ⓘ button: 22px ring, padded to a comfortable tap target */
+.nav__info {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: -8px;
+  border-radius: 999px;
+}
+
+.nav__info span {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1;
+}
+
+.nav__info:hover span,
+.nav__info:focus-visible span {
+  background: rgba(201, 162, 74, 0.15);
+}
+
+/* ---------- Info panel ---------- */
+.info-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  background: rgba(8, 6, 4, 0.72);
+  animation: fade-in 200ms var(--ease);
+}
+
+.info-panel {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 28px 24px 24px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(ellipse at top, rgba(201, 162, 74, 0.08), transparent 70%),
+    var(--bg-1);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-panel__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ink-dim);
+}
+
+.info-panel__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.info-panel__subtitle {
+  margin: 6px 0 0;
+  font-family: var(--font-sc);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink-dim);
+}
+
+.info-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.info-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  background: var(--gold);
+}
+
+.info-list__how {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.info-list kbd {
+  display: inline-block;
+  min-width: 22px;
+  padding: 0 6px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.info-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+
+.info-toggle__label {
+  font-family: var(--font-sc);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.info-toggle__note {
+  margin-top: 2px;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink-dim);
+}
+
+.switch {
+  flex: none;
+  position: relative;
+  width: 50px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--ink-faint);
+  background: var(--bg-2);
+  transition: background 200ms var(--ease), border-color 200ms var(--ease);
+}
+
+.switch__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--ink-dim);
+  transition: transform 200ms var(--ease), background 200ms var(--ease);
+}
+
+.switch.is-on {
+  background: rgba(201, 162, 74, 0.35);
+  border-color: var(--gold);
+}
+
+.switch.is-on .switch__knob {
+  transform: translateX(22px);
+  background: var(--gold-hi);
+}
+
+.switch:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.info-panel__done {
+  align-self: center;
+  margin-top: 4px;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
 }
 
 /* ---------- Slide transitions ---------- */

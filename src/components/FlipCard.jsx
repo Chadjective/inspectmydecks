@@ -30,23 +30,32 @@ export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
       {/* IMAGE SIDE */}
       <div className="flip-card__face flip-card__face--front">
         {!imgFailed && imgSrc ? (
-          <img
-            key={imgSrc}
-            className="flip-card__image"
-            src={imgSrc}
-            alt={card.name}
-            onError={() => setImgFailed(true)}
-            draggable={false}
-          />
+          <>
+            {/* Blurred copy fills the card behind the full, uncropped image,
+                since card art comes in many shapes (tall, square-ish, landscape). */}
+            <img
+              key={`${imgSrc}-backdrop`}
+              className="flip-card__image-backdrop"
+              src={imgSrc}
+              alt=""
+              aria-hidden="true"
+              draggable={false}
+            />
+            <img
+              key={imgSrc}
+              className="flip-card__image"
+              src={imgSrc}
+              alt={card.name}
+              onError={() => setImgFailed(true)}
+              draggable={false}
+            />
+          </>
         ) : (
           <div className="flip-card__image-fallback">
             <span>{card.name}</span>
           </div>
         )}
         <div className="flip-card__image-frame" aria-hidden="true" />
-        <div className="flip-card__image-label">
-          {String(card.number).padStart(2, '0')} · {card.name}
-        </div>
       </div>
 
       {/* TEXT SIDE */}
@@ -61,7 +70,6 @@ function CardTextSide({ card }) {
   return (
     <div className="card-text">
       <div className="card-text__type">{card.type}</div>
-      <h3 className="card-text__name">{card.name}</h3>
       <p className="card-text__description">{card.description}</p>
 
       <div className="deco-rule" aria-hidden="true">
