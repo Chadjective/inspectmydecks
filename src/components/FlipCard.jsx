@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import { assetUrl } from '../utils/assetUrl.js'
 
+const CARD_RATIO = 2 / 3
+// Art within this much of the card's shape fills it edge to edge (trimming at
+// most a sliver); anything further off is shown whole over the blurred backdrop.
+const COVER_TOLERANCE = 0.07
+
 export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
   const imgSrc = assetUrl(card.image)
   const [imgFailed, setImgFailed] = useState(false)
   const [shownSrc, setShownSrc] = useState(imgSrc)
+  const [cover, setCover] = useState(false)
 
   // Reset the image-error state when the card (and thus its image) changes —
   // otherwise one card with a missing image would force the fallback for every
@@ -12,6 +18,7 @@ export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
   if (imgSrc !== shownSrc) {
     setShownSrc(imgSrc)
     setImgFailed(false)
+    setCover(false)
   }
 
   return (
@@ -43,9 +50,13 @@ export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
             />
             <img
               key={imgSrc}
-              className="flip-card__image"
+              className={`flip-card__image ${cover ? 'is-cover' : ''}`}
               src={imgSrc}
               alt={card.name}
+              onLoad={(e) => {
+                const { naturalWidth: w, naturalHeight: h } = e.currentTarget
+                setCover(Math.abs(w / h / CARD_RATIO - 1) <= COVER_TOLERANCE)
+              }}
               onError={() => setImgFailed(true)}
               draggable={false}
             />
@@ -55,7 +66,6 @@ export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
             <span>{card.name}</span>
           </div>
         )}
-        <div className="flip-card__image-frame" aria-hidden="true" />
       </div>
 
       {/* TEXT SIDE */}
