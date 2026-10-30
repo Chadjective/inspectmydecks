@@ -55,7 +55,6 @@ export default function FlipCard({ card, flipped, onFlip, transitionClass }) {
             <span>{card.name}</span>
           </div>
         )}
-        <div className="flip-card__image-frame" aria-hidden="true" />
       </div>
 
       {/* TEXT SIDE */}

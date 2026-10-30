@@ -392,37 +392,6 @@ img {
   padding: 40px;
 }
 
-.flip-card__image-frame {
-  position: absolute;
-  inset: 12px;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  pointer-events: none;
-}
-
-.flip-card__image-frame::before,
-.flip-card__image-frame::after {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border: 1px solid var(--gold);
-}
-
-.flip-card__image-frame::before {
-  top: -1px;
-  left: -1px;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.flip-card__image-frame::after {
-  bottom: -1px;
-  right: -1px;
-  border-left: 0;
-  border-top: 0;
-}
-
 /* Back of card (text side) */
 .card-text {
   display: flex;
