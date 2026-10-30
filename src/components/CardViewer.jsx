@@ -56,12 +56,11 @@ export default function CardViewer({ deck, onBack }) {
   const [transition, setTransition] = useState(null) // 'leaving-left' | 'leaving-right' | 'entering-left' | 'entering-right' | 'bouncing-left' | 'bouncing-right'
   const [shuffleFx, setShuffleFx] = useState(null)    // 'riffle' | 'shuffle' | null
   const [infoOpen, setInfoOpen] = useState(false)
-  // On by default where no permission prompt is needed (e.g. Android);
-  // permission-gated devices (iPhone) start off until switched on from the info panel.
-  const [shakeOn, setShakeOn] = useState(
-    () => shakeSupported && !shakeNeedsPermission && readShakePref() !== 'off',
-  )
+  // On by default unless switched off. Where the browser gates motion behind a
+  // permission prompt (iPhone), it is requested on the first tap (see below).
+  const [shakeOn, setShakeOn] = useState(() => shakeSupported && readShakePref() !== 'off')
   const [shakeDenied, setShakeDenied] = useState(false)
+  const motionGrantedRef = useRef(!shakeNeedsPermission)
 
   const animatingRef = useRef(false)
 
@@ -143,18 +142,36 @@ export default function CardViewer({ deck, onBack }) {
     enabled: shakeOn && !infoOpen,
   })
 
+  // Permission prompts must come from a tap, so ask on the first one.
+  useEffect(() => {
+    if (!shakeOn || motionGrantedRef.current) return
+    const ask = async () => {
+      window.removeEventListener('click', ask, true)
+      const result = await requestMotionPermission()
+      if (result === 'granted') {
+        motionGrantedRef.current = true
+      } else {
+        setShakeOn(false)
+        setShakeDenied(true)
+      }
+    }
+    window.addEventListener('click', ask, true)
+    return () => window.removeEventListener('click', ask, true)
+  }, [shakeOn])
+
   const toggleShake = async () => {
     if (shakeOn) {
       setShakeOn(false)
       saveShakePref(false)
       return
     }
-    if (shakeNeedsPermission) {
+    if (!motionGrantedRef.current) {
       const result = await requestMotionPermission()
       if (result !== 'granted') {
         setShakeDenied(true)
         return
       }
+      motionGrantedRef.current = true
     }
     setShakeDenied(false)
     setShakeOn(true)
